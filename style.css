@@ -65,12 +65,19 @@ nav a:hover {
   padding: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 200px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.book:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .book img {
   max-width: 60%;
   max-height: 60%;
 }
+
 footer {
   background-color: #333;
   color: #fff;
@@ -91,28 +98,44 @@ footer {
 .search-bar {
   display: flex;
   align-items: center;
+  gap: 10px; 
 }
 
 .search-bar input {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 300px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  padding: 0.5rem 1rem;
+  border: 2px solid #432f07;
+  border-radius: 25px;
+  width: 320px; 
+  font-size: 0.9rem; 
+  transition: all 0.3s ease-in-out;
+}
+
+.search-bar input:focus {
+  border-color: #7a572b;
+  outline: none;
+  box-shadow: 0 0 8px rgba(122, 87, 43, 0.5);
 }
 
 .search-bar button {
-  padding: 0.5rem;
+  font-family: "Libre Baskerville", Georgia, serif;
+  padding: 0.5rem 1rem;
   border: none;
   background-color: #432f07;
-  color: #fff;
+  color: white;
   cursor: pointer;
-  border-radius: 4px;
-  margin-left: 0.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem; 
+  transition: all 0.3s ease-in-out;
 }
 
 .search-bar button:hover {
-  background-color: #432f07;
+  background-color: #7a572b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
+
+
 
 .cart-icon {
   margin-left: 1rem;
@@ -186,4 +209,54 @@ footer {
 .see-all {
   color: black;
   font-size: small;
+}
+
+.fiction-banner {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 80%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.fiction-banner:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fiction-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.fiction-banner {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 80%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.fiction-banner:hover {
+  transform: scale(1.005);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fiction-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.fiction-banner-alt {
+  display: flex;
+  justify-content: center;
+
+}
+
+.fiction-banner-alt img {
+  width: 100%; 
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
