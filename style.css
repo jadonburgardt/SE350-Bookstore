@@ -25,6 +25,8 @@ header {
   text-align: center;
   position: sticky;
 }
+
+/* Navigation Elements */
 nav {
   display: flex;
   justify-content: center;
@@ -39,6 +41,8 @@ nav a {
 nav a:hover {
   background-color: #555;
 }
+
+/* Banners */
 .hero {
   background: url("./images/books.jpg") no-repeat center center/cover;
   height: 400px;
@@ -59,6 +63,8 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 
+/* Books */
+
 .book {
   background-color: #fff;
   margin: 1rem;
@@ -78,6 +84,8 @@ nav a:hover {
   max-height: 60%;
 }
 
+/* Bottom Footer */
+
 footer {
   background-color: #333;
   color: #fff;
@@ -95,10 +103,12 @@ footer {
   padding: 0 1rem;
 }
 
+/* Search Bar */
+
 .search-bar {
   display: flex;
   align-items: center;
-  gap: 10px; 
+  gap: 10px;
 }
 
 .search-bar input {
@@ -106,8 +116,8 @@ footer {
   padding: 0.5rem 1rem;
   border: 2px solid #432f07;
   border-radius: 25px;
-  width: 320px; 
-  font-size: 0.9rem; 
+  width: 320px;
+  font-size: 0.9rem;
   transition: all 0.3s ease-in-out;
 }
 
@@ -125,7 +135,7 @@ footer {
   color: white;
   cursor: pointer;
   border-radius: 25px;
-  font-size: 0.9rem; 
+  font-size: 0.9rem;
   transition: all 0.3s ease-in-out;
 }
 
@@ -135,7 +145,7 @@ footer {
   transform: scale(1.05);
 }
 
-
+/* Cart Icon */
 
 .cart-icon {
   margin-left: 1rem;
@@ -163,6 +173,8 @@ footer {
   color: #aaa;
 }
 
+/* Bestseller Container */
+
 .bestseller-container {
   display: flex;
   align-items: center;
@@ -176,6 +188,8 @@ footer {
   flex-wrap: wrap;
   width: 80%;
 }
+
+/* Arrows */
 
 .arrow {
   background-color: #333;
@@ -206,10 +220,14 @@ footer {
   right: -10px;
 }
 
+/* See all */
+
 .see-all {
   color: black;
   font-size: small;
 }
+
+/* Fiction Banner */
 
 .fiction-banner {
   display: flex;
@@ -249,14 +267,15 @@ footer {
   border-radius: 10px;
 }
 
-.fiction-banner-alt {
+/* Alternate fiction banner */
+
+it helps you ::-webkit-search-cancel-button .fiction-banner-alt {
   display: flex;
   justify-content: center;
-
 }
 
 .fiction-banner-alt img {
-  width: 100%; 
+  width: 100%;
   height: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
