@@ -1,14 +1,302 @@
 /* Add styles for the button */
 #showBooksButton {
-    margin: 20px; /* Adjust the margin as needed */
+  margin: 20px; /* Adjust the margin as needed */
 }
 
-p {
-text-align: center;
-font-family: 'Courier New', Courier, monospace;
+/* p {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
 }
 
 body {
-    background-image: url("trees1.jpeg");
-    margin-right: 200px;
+  background-image: url("trees1.jpeg");
+  margin-right: 200px;
+} */
+
+/*************
+
+Below this is styles from the old labs, above is given styles.
+
+*******************/
+
+body {
+  font-family: "Libre Baskerville", Georgia, serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header h1 {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+nav a {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 1rem;
+}
+
+header {
+  background-color: #f4f4f4;
+  color: #fff;
+  padding: 0.1rem 0;
+  text-align: center;
+  position: sticky;
+}
+
+/* Navigation Elements */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #432f07;
+  box-shadow: 0 0 10px rgba(1, 0, 0, 100);
+}
+nav a {
+  color: #fff;
+  padding: 1rem;
+  text-decoration: none;
+}
+nav a:hover {
+  background-color: #555;
+}
+
+/* Banners */
+.hero {
+  background: url("./imgs/books.jpg") no-repeat center center/cover;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 3rem;
+}
+.content {
+  padding: 2rem;
+  text-align: center;
+}
+.content h2 {
+  margin-bottom: 1rem;
+}
+
+/* Books */
+
+.book {
+  background-color: #fff;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.book:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.book img {
+  max-width: 60%;
+  max-height: 60%;
+}
+
+/* Bottom Footer */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* Search Bar */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  font-family: "Libre Baskerville", Georgia, serif;
+  padding: 0.5rem 1rem;
+  border: 2px solid #432f07;
+  border-radius: 25px;
+  width: 320px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-bar input:focus {
+  border-color: #7a572b;
+  outline: none;
+  box-shadow: 0 0 8px rgba(122, 87, 43, 0.5);
+}
+
+.search-bar button {
+  font-family: "Libre Baskerville", Georgia, serif;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #432f07;
+  color: white;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-bar button:hover {
+  background-color: #7a572b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+/* Cart Icon */
+
+.cart-icon {
+  margin-left: 1rem;
+}
+
+.cart-icon img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.space {
+  height: 10px;
+}
+
+.cart-icon ion-icon {
+  font-size: 24px;
+  color: #432f07;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  width: 180px;
+}
+
+.cart-icon ion-icon:hover {
+  color: #aaa;
+}
+
+/* Bestseller Container */
+
+.bestseller-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.books {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+/* Arrows */
+
+.arrow {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+  background-color: #555;
+}
+
+.left-arrow {
+  position: absolute;
+  left: -10px;
+}
+
+.right-arrow {
+  position: absolute;
+  right: -10px;
+}
+
+/* See all */
+
+.see-all {
+  color: black;
+  font-size: small;
+}
+
+/* Fiction Banner */
+
+.fiction-banner {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 80%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.fiction-banner:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fiction-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.fiction-banner {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 80%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.fiction-banner:hover {
+  transform: scale(1.005);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fiction-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Alternate fiction banner */
+
+it helps you ::-webkit-search-cancel-button .fiction-banner-alt {
+  display: flex;
+  justify-content: center;
+}
+
+.fiction-banner-alt img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

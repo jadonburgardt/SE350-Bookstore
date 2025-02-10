@@ -1,46 +1,234 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Bookstore</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
 
-<head>
-    <title>Book Reviews</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>Online Bookstore</h1>
+        <form class="search-bar" onsubmit="searchBooks(); return false;">
+          <input
+            type="text"
+            id="searchText"
+            placeholder="Search for books by Title..."
+          />
+          <button type="submit">Search</button>
+        </form>
+        <div class="cart-icon">
+          <ion-icon name="cart-outline"></ion-icon>
+        </div>
+      </div>
+    </header>
 
-</head>
-
-<body>
-    <h1>Book Reviews</h1>
-
-    <!-- Add a div to input book data -->
-    <div id="addBook">
-        <h2>Add a Book</h2>
-        <input type="text" id="bookTitle" placeholder="Book Title">
-        <input type="text" id="publicationYear" placeholder="Publication Year">
-        <input type="text" id="coverPath" placeholder="Cover Path">
-        <button onclick="addBook()">Add</button>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Fiction</a>
+      <a href="#">Nonfiction</a>
+      <a href="#">eBooks</a>
+      <a href="#">Audiobooks</a>
+      <a href="#">Books</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="space"></div>
+    <div class="fiction-banner-alt">
+      <img
+        src="https://dispatch.barnesandnoble.com/content/dam/ccr/global/global-nav-banner/2025/01/31866_GlobalNav_PostHoliday50Off_01_24_25.jpg"
+        alt="Featured Fiction Banner"
+      />
+    </div>
+    <div class="space"></div>
+    <div class="hero">
+      <h1>Discover Your Next Great Book</h1>
     </div>
 
-    <!-- Add a search box -->
-    <div id="searchBox">
-        <h2>Search</h2>
-        <input type="text" id="searchText" placeholder="Enter Book Title">
+    <div class="content">
+      <h2>Bestsellers</h2>
+      <a href="#" class="see-all">See All</a>
+      <div class="bestseller-container">
+        <button class="arrow left-arrow">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+        <div class="books">
+          <div class="book">
+            <img
+              src="https://m.media-amazon.com/images/I/7125+5E40JL._AC_UF1000,1000_QL80_.jpg"
+              alt="Book 1"
+            />
+            <h3>The Lord of the Rings</h3>
+            <p>J.R.R Tolkien</p>
+          </div>
+          <div class="book">
+            <img
+              src="https://m.media-amazon.com/images/I/81nq+ewtkcL.jpg"
+              alt="Book 1"
+            />
+            <h3>Dune</h3>
+            <p>Frank Herbert</p>
+          </div>
+          <div class="book">
+            <img
+              src="https://s26162.pcdn.co/wp-content/uploads/2018/02/gatsby-original2.jpg"
+              alt="Book 1"
+            />
+            <h3>The Great Gatsby</h3>
+            <p>F Scott Fitzgerald</p>
+          </div>
+          <div class="book">
+            <img
+              src="https://www.thebookdesigner.com/wp-content/uploads/2024/05/J.R.R.Tolkien-The-Hobbit.png"
+              alt="Book 1"
+            />
+            <h3>The Hobbit</h3>
+            <p>J.R.R Tolkien</p>
+          </div>
+        </div>
+        <button class="arrow right-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="fiction-banner">
+      <img
+        src="https://dispatch.barnesandnoble.com/content/dam/ccr/homepage/daily/2025/01/07/31553_SkinnyHero_ValentinesDayAdult_01_07_24.jpg"
+        alt="Featured Fiction Banner"
+      />
+    </div>
+
+    <div class="content">
+      <h2>Our Best Fiction Books</h2>
+      <a href="#" class="see-all">See All</a>
+      <div class="bestseller-container">
+        <button class="arrow left-arrow">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+        <div class="books">
+          <div class="book">
+            <img
+              src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780593595459_p0_v2%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+              alt="Book 1"
+            />
+            <h3>We Do Not Part</h3>
+            <p>Han Kang</p>
+          </div>
+          <div class="book">
+            <img
+              src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781649374189_p0_v8%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+              alt="Book 1"
+            />
+            <h3>Onyx Storm</h3>
+            <p>Rebecca Yarros</p>
+          </div>
+        </div>
+        <button class="arrow right-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="fiction-banner">
+      <img
+        src="https://dispatch.barnesandnoble.com/content/dam/ccr/homepage/daily/2025/01/21/31812_RUSH_SkinnyHero_Rebecca_Ross_01_21_25.jpg"
+        alt="Featured Fiction Banner"
+      />
+    </div>
+
+    <div class="content">
+      <h2>Our Best Nonfiction Books</h2>
+      <a href="#" class="see-all">See All</a>
+      <div class="bestseller-container">
+        <button class="arrow left-arrow">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+        <div class="books">
+          <div class="book">
+            <img
+              src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780593801581_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+              alt="Book 1"
+            />
+            <h3>Source Code</h3>
+            <p>Bill Gates</p>
+          </div>
+        </div>
+        <button class="arrow right-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="fiction-banner">
+      <img
+        src="https://dispatch.barnesandnoble.com/content/dam/ccr/homepage/daily/2025/02/05/31811_SkinnyHero_Katabasis_02_05_25.jpg"
+        alt="Featured Fiction Banner"
+      />
+    </div>
+
+    <!-- Add a new section for book management and database functionality -->
+    <div class="content">
+      <h2>Add a Book & Manage Reviews</h2>
+
+      <!-- Book input form -->
+      <div id="addBook">
+        <h3>Add a New Book</h3>
+        <input type="text" id="bookTitle" placeholder="Book Title" />
+        <input
+          type="text"
+          id="publicationYear"
+          placeholder="Publication Year"
+        />
+        <input type="text" id="coverPath" placeholder="Cover Path" />
+        <button onclick="addBook()">Add Book</button>
+      </div>
+
+      <!-- Search functionality -->
+      <div id="searchBox">
+        <h3>Search for Books</h3>
+        <input type="text" id="searchText" placeholder="Enter Book Title" />
         <button onclick="searchBooks()">Search</button>
-    </div>
+      </div>
 
-    <!-- Display books in this div -->
-    <div id="bookList">
+      <!-- Display search results -->
+      <div id="bookList" class="book-list">
+        <h3>Search Results</h3>
         <!-- Book data will be displayed here dynamically -->
+      </div>
+
+      <!-- Show all books -->
+      <button id="showBooksButton" onclick="showAllBooks()">
+        Show All Books
+      </button>
+
+      <div id="allbooks" class="book-list">
+        <!-- All books will be displayed here dynamically -->
+      </div>
     </div>
 
-    <button id="showBooksButton" onclick="showAllBooks()">Show All Books</button>
+    <footer>
+      <p>&copy; 2025 Online Bookstore. All rights reserved.</p>
+    </footer>
 
-    <!-- Display books in this div -->
-    <div id="allbooks">
-        <!-- Book data will be displayed here dynamically -->
-    </div>
-
-    <img src="imgs\scsu_logo.jpg" alt="">
-
-
+    <!-- JavaScript integration -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
-
+  </body>
 </html>
