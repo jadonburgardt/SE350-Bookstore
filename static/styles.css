@@ -18,6 +18,44 @@ body {
 Below this is styles from the old labs, above is given styles.
 
 *******************/
+.search-results {
+  display: none;
+  position: absolute;
+  top: 100%; /* Ensures the list starts right below the search bar */
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.search-results li {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #e0e0e0;
+  color: black; /* Ensure the text is black */
+}
+
+.search-results li:hover {
+  background-color: #f0f0f0;
+}
+
+.search-bar {
+  position: relative;
+}
+
+/**********^^ search bar ^^*********/
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Libre Baskerville", Georgia, serif;

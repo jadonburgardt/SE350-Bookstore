@@ -2,56 +2,85 @@
   {
     "title": "Never Enough: When Achievement Culture Becomes Toxic-and What We Can Do About It",
     "publication_year": 2023,
-    "cover_path": "https://m.media-amazon.com/images/I/51jW-Qe2+GL._SY445_SX342_.jpg"
+    "cover_path": "https://m.media-amazon.com/images/I/51jW-Qe2+GL._SY445_SX342_.jpg",
+    "author": "Jennifer Breheny Wallace"
   },
   {
     "title": "All the Light We Cannot See",
     "publication_year": 2014,
-    "cover_path": "https://m.media-amazon.com/images/I/41M1ZAclqgL._SY445_SX342_.jpg"
+    "cover_path": "https://m.media-amazon.com/images/I/41M1ZAclqgL._SY445_SX342_.jpg",
+    "author": "Anthony Doerr"
   },
   {
     "title": "The Midnight Library",
     "publication_year": 2020,
-    "cover_path": "https://m.media-amazon.com/images/I/71ls-I6A5KL.jpg"
+    "cover_path": "https://m.media-amazon.com/images/I/71ls-I6A5KL.jpg",
+    "author": "Matt Haig"
   },
   {
     "title": "Where the Crawdads Sing",
     "publication_year": 2018,
-    "cover_path": "https://m.media-amazon.com/images/I/81F0NTrPdCL._AC_UF1000,1000_QL80_.jpg"
+    "cover_path": "https://m.media-amazon.com/images/I/81F0NTrPdCL._AC_UF1000,1000_QL80_.jpg",
+    "author": "Delia Owens"
   },
   {
     "title": "Verity",
     "publication_year": 2021,
-    "cover_path": "https://m.media-amazon.com/images/I/917iVfhEhxL.jpg"
+    "cover_path": "https://m.media-amazon.com/images/I/917iVfhEhxL.jpg",
+    "author": "Colleen Hoover"
   },
   {
     "title": "It Ends With Us",
     "publication_year": 2016,
-    "cover_path": "https://m.media-amazon.com/images/I/91CqNElQaKL.jpg"
+    "cover_path": "https://m.media-amazon.com/images/I/91CqNElQaKL.jpg",
+    "author": "Colleen Hoover"
   },
   {
     "title": "The Night Circus",
     "publication_year": 2011,
-    "cover_path": "https://m.media-amazon.com/images/I/61Pqqc4muHL._AC_UF1000,1000_QL80_.jpg"
+    "cover_path": "https://m.media-amazon.com/images/I/61Pqqc4muHL._AC_UF1000,1000_QL80_.jpg",
+    "author": "Erin Morgenstern"
   },
   {
     "title": "The Seven Husbands of Evelyn Hugo",
     "publication_year": 2017,
-    "cover_path": "https://m.media-amazon.com/images/I/710QvWhZIwL.jpg"
+    "cover_path": "https://m.media-amazon.com/images/I/710QvWhZIwL.jpg",
+    "author": "Taylor Jenkins Reid"
   },
   {
     "title": "A Court of Thorns and Roses",
     "publication_year": 2015,
-    "cover_path": "https://prodimage.images-bn.com/pimages/9781635575569_p0_v6_s600x595.jpg"
+    "cover_path": "https://prodimage.images-bn.com/pimages/9781635575569_p0_v6_s600x595.jpg",
+    "author": "Sarah J. Maas"
   },
   {
     "title": "Circe",
     "publication_year": 2018,
-    "cover_path": "https://m.media-amazon.com/images/I/91r0y3YEfGL._AC_UF1000,1000_QL80_.jpg"
+    "cover_path": "https://m.media-amazon.com/images/I/91r0y3YEfGL._AC_UF1000,1000_QL80_.jpg",
+    "author": "Madeline Miller"
   },
   {
     "title": "Educated: A Memoir",
     "publication_year": 2018,
-    "cover_path": "https://m.media-amazon.com/images/I/71UypkUjStL._AC_UF1000,1000_QL80_.jpg"
+    "cover_path": "https://m.media-amazon.com/images/I/71UypkUjStL._AC_UF1000,1000_QL80_.jpg",
+    "author": "Tara Westover"
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "publication_year": 2015,
+    "cover_path": "https://m.media-amazon.com/images/I/713jIoMO3UL._AC_UF1000,1000_QL80_.jpg",
+    "author": "Yuval Noah Harari"
+  },
+  {
+    "title": "Becoming",
+    "publication_year": 2018,
+    "cover_path": "https://m.media-amazon.com/images/I/81h2gWPTYJL._AC_UF1000,1000_QL80_.jpg",
+    "author": "Michelle Obama"
+  },
+  {
+    "title": "Atomic Habits",
+    "publication_year": 2018,
+    "cover_path": "https://m.media-amazon.com/images/I/91bYsX41DVL._AC_UF1000,1000_QL80_.jpg",
+    "author": "James Clear"
   }
 ]

@@ -26,14 +26,16 @@
     <header>
       <div class="header-container">
         <h1>Online Bookstore</h1>
-        <form class="search-bar" onsubmit="searchBooks(); return false;">
+        <form class="search-bar" onsubmit="return false;">
           <input
             type="text"
             id="searchText"
-            placeholder="Search for books by Title..."
+            placeholder="Search for books by Title or Author..."
+            autocomplete="off"
           />
-          <button type="submit">Search</button>
+          <ul id="searchResults" class="search-results"></ul>
         </form>
+
         <div class="cart-icon">
           <ion-icon name="cart-outline"></ion-icon>
         </div>
@@ -41,12 +43,13 @@
     </header>
 
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Fiction</a>
-      <a href="#">Nonfiction</a>
-      <a href="#">eBooks</a>
-      <a href="#">Audiobooks</a>
-      <a href="#">Books</a>
+      <a href="#bestsellersSection">Bestsellers</a>
+      <a href="#fictionSection">Fiction</a>
+      <a href="#nonfictionSection">Nonfiction</a>
+      <a href="#addBookSection">Add Book</a>
+      <!-- <a href="#">eBooks</a>
+      <a href="#">Audiobooks</a> -->
+      <a href="#">All Books</a>
       <a href="#">About Us</a>
       <a href="#">Contact</a>
     </nav>
@@ -62,47 +65,14 @@
       <h1>Discover Your Next Great Book</h1>
     </div>
 
-    <div class="content">
+    <div class="content" id="bestsellersSection">
       <h2>Bestsellers</h2>
       <a href="#" class="see-all">See All</a>
       <div class="bestseller-container">
         <button class="arrow left-arrow">
           <ion-icon name="chevron-back-outline"></ion-icon>
         </button>
-        <div class="books">
-          <div class="book">
-            <img
-              src="https://m.media-amazon.com/images/I/7125+5E40JL._AC_UF1000,1000_QL80_.jpg"
-              alt="Book 1"
-            />
-            <h3>The Lord of the Rings</h3>
-            <p>J.R.R Tolkien</p>
-          </div>
-          <div class="book">
-            <img
-              src="https://m.media-amazon.com/images/I/81nq+ewtkcL.jpg"
-              alt="Book 1"
-            />
-            <h3>Dune</h3>
-            <p>Frank Herbert</p>
-          </div>
-          <div class="book">
-            <img
-              src="https://s26162.pcdn.co/wp-content/uploads/2018/02/gatsby-original2.jpg"
-              alt="Book 1"
-            />
-            <h3>The Great Gatsby</h3>
-            <p>F Scott Fitzgerald</p>
-          </div>
-          <div class="book">
-            <img
-              src="https://www.thebookdesigner.com/wp-content/uploads/2024/05/J.R.R.Tolkien-The-Hobbit.png"
-              alt="Book 1"
-            />
-            <h3>The Hobbit</h3>
-            <p>J.R.R Tolkien</p>
-          </div>
-        </div>
+        <div id="bestsellerBooks" class="books"></div>
         <button class="arrow right-arrow">
           <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
@@ -116,31 +86,14 @@
       />
     </div>
 
-    <div class="content">
+    <div class="content" id="fictionSection">
       <h2>Our Best Fiction Books</h2>
       <a href="#" class="see-all">See All</a>
       <div class="bestseller-container">
         <button class="arrow left-arrow">
           <ion-icon name="chevron-back-outline"></ion-icon>
         </button>
-        <div class="books">
-          <div class="book">
-            <img
-              src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780593595459_p0_v2%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
-              alt="Book 1"
-            />
-            <h3>We Do Not Part</h3>
-            <p>Han Kang</p>
-          </div>
-          <div class="book">
-            <img
-              src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781649374189_p0_v8%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
-              alt="Book 1"
-            />
-            <h3>Onyx Storm</h3>
-            <p>Rebecca Yarros</p>
-          </div>
-        </div>
+        <div id="fictionBooks" class="books"></div>
         <button class="arrow right-arrow">
           <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
@@ -154,23 +107,14 @@
       />
     </div>
 
-    <div class="content">
+    <div class="content" id="nonfictionSection">
       <h2>Our Best Nonfiction Books</h2>
       <a href="#" class="see-all">See All</a>
       <div class="bestseller-container">
         <button class="arrow left-arrow">
           <ion-icon name="chevron-back-outline"></ion-icon>
         </button>
-        <div class="books">
-          <div class="book">
-            <img
-              src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780593801581_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
-              alt="Book 1"
-            />
-            <h3>Source Code</h3>
-            <p>Bill Gates</p>
-          </div>
-        </div>
+        <div id="nonfictionBooks" class="books"></div>
         <button class="arrow right-arrow">
           <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
@@ -185,7 +129,7 @@
     </div>
 
     <!-- Add a new section for book management and database functionality -->
-    <div class="content">
+    <div class="content" id="addBookSection">
       <h2>Add a Book & Manage Reviews</h2>
 
       <!-- Book input form -->
@@ -199,13 +143,6 @@
         />
         <input type="text" id="coverPath" placeholder="Cover Path" />
         <button onclick="addBook()">Add Book</button>
-      </div>
-
-      <!-- Search functionality -->
-      <div id="searchBox">
-        <h3>Search for Books</h3>
-        <input type="text" id="searchText" placeholder="Enter Book Title" />
-        <button onclick="searchBooks()">Search</button>
       </div>
 
       <!-- Display search results -->
