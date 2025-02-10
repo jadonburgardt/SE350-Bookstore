@@ -1,27 +1,12 @@
 /* Add styles for the button */
 #showBooksButton {
-  margin: 20px; /* Adjust the margin as needed */
+  margin: 20px;
 }
 
-/* p {
-  text-align: center;
-  font-family: "Courier New", Courier, monospace;
-}
-
-body {
-  background-image: url("trees1.jpeg");
-  margin-right: 200px;
-} */
-
-/*************
-
-Below this is styles from the old labs, above is given styles.
-
-*******************/
 .search-results {
   display: none;
   position: absolute;
-  top: 100%; /* Ensures the list starts right below the search bar */
+  top: 100%;
   left: 0;
   background-color: white;
   border: 1px solid #ccc;
@@ -40,7 +25,7 @@ Below this is styles from the old labs, above is given styles.
   padding: 8px;
   cursor: pointer;
   border-bottom: 1px solid #e0e0e0;
-  color: black; /* Ensure the text is black */
+  color: black;
 }
 
 .search-results li:hover {
@@ -64,7 +49,7 @@ Below this is styles from the old labs, above is given styles.
   border-radius: 50%;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  display: none; /* Initially hidden */
+  display: none;
   transition: opacity 0.3s ease;
 }
 
@@ -77,6 +62,93 @@ Below this is styles from the old labs, above is given styles.
 }
 
 /**********^^ scroll top ^^*********/
+
+/* Modal Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 40%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  text-align: left;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+form input,
+form button {
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.open-modal-btn {
+  padding: 10px 15px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
+  font-family: "libre baskerville";
+}
+
+.open-modal-btn:hover {
+  background-color: #45a049;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: "libre baskerville";
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/**********^^ MODAL ^^*********/
 
 .back-button-container {
   text-align: center;

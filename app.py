@@ -40,11 +40,13 @@ def get_all_books():
 
 # API to add a book to the JSON file
 @app.route('/api/add_book', methods=['POST'])
+@app.route('/api/add_book', methods=['POST'])
 def add_book():
     try:
         # Get book details from the request
         data = request.get_json()
         title = data.get('title')
+        author = data.get('author')  
         publication_year = data.get('publication_year')
         cover_path = data.get('cover_path')
 
@@ -54,18 +56,19 @@ def add_book():
         # Add the new book to the list
         book = {
             'title': title,
+            'author': author,  
             'publication_year': publication_year,
             'cover_path': cover_path
-            # Add other attributes here as needed
         }
         books.append(book)
 
-        # Write the updated data back to the JSON file
+        
         write_json_file(books)
 
         return jsonify({'message': 'Book added successfully'})
     except Exception as e:
         return jsonify({'error': str(e)})
+
 
 # Route to render the index.html page
 @app.route('/')

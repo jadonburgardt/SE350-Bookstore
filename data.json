@@ -82,5 +82,11 @@
     "publication_year": 2018,
     "cover_path": "https://m.media-amazon.com/images/I/91bYsX41DVL._AC_UF1000,1000_QL80_.jpg",
     "author": "James Clear"
+  },
+  {
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "publication_year": 1965,
+    "cover_path": "https://upload.wikimedia.org/wikipedia/en/d/de/Dune-Frank_Herbert_%281965%29_First_edition.jpg"
   }
 ]

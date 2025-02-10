@@ -133,17 +133,54 @@
       <h2>Add a Book to the Database</h2>
 
       <!-- Book input form -->
-      <div id="addBook">
-        <h3>Add a New Book</h3>
-        <input type="text" id="bookTitle" placeholder="Book Title" />
-        <input
-          type="text"
-          id="publicationYear"
-          placeholder="Publication Year"
-        />
-        <input type="text" id="coverPath" placeholder="Cover Path" />
-        <button onclick="addBook()">Add Book</button>
+      <div id="addBook"></div>
+
+      <!-- Modal Structure -->
+      <div id="addBookModal" class="modal">
+        <div class="modal-content">
+          <span id="closeModalButton" class="close">&times;</span>
+          <h2>Add a Book to the Database</h2>
+
+          <form id="addBookForm" onsubmit="submitBook(event)">
+            <label for="bookTitle">Book Title:</label>
+            <input
+              type="text"
+              id="bookTitle"
+              placeholder="Enter Book Title"
+              required
+            />
+
+            <label for="author">Author:</label>
+            <input
+              type="text"
+              id="author"
+              placeholder="Enter Author"
+              required
+            />
+
+            <label for="publicationYear">Publication Year:</label>
+            <input
+              type="number"
+              id="publicationYear"
+              placeholder="Enter Publication Year"
+              required
+            />
+
+            <label for="coverPath">Cover Image URL:</label>
+            <input
+              type="url"
+              id="coverPath"
+              placeholder="Enter Cover Image URL"
+              required
+            />
+
+            <button type="submit" class="submit-btn">Add Book</button>
+          </form>
+        </div>
       </div>
+
+      <!-- Button to Open Modal -->
+      <button id="openModalButton" class="open-modal-btn">Add New Book</button>
     </div>
 
     <footer>

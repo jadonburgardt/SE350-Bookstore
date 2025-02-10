@@ -38,13 +38,13 @@ function loadCategoryBooks() {
       data.books.forEach((book) => {
         // Book template with title, author, and publication year
         const bookHTML = `
-            <div class="book">
-                <img src="${book.cover_path}" alt="${book.title}" />
-                <h3>${book.title}</h3>
-                <p><strong>Author:</strong> ${book.author}</p>
-                <p><strong>Publication Year:</strong> ${book.publication_year}</p>
-            </div>
-          `;
+              <div class="book">
+                  <img src="${book.cover_path}" alt="${book.title}" />
+                  <h3>${book.title}</h3>
+                  <p><strong>Author:</strong> ${book.author}</p>
+                  <p><strong>Publication Year:</strong> ${book.publication_year}</p>
+              </div>
+            `;
 
         // Categorize and display books in the correct section
         if (bookCategories.bestsellers.includes(book.title)) {
@@ -61,20 +61,44 @@ function loadCategoryBooks() {
     });
 }
 
-// Function to add a book to the list and send it to the server
-function addBook() {
+// Open and close the modal functionality
+const modal = document.getElementById("addBookModal");
+const openModalButton = document.getElementById("openModalButton");
+const closeModalButton = document.getElementById("closeModalButton");
+
+openModalButton.onclick = function () {
+  modal.style.display = "block";
+};
+
+closeModalButton.onclick = function () {
+  modal.style.display = "none";
+};
+
+window.onclick = function (event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+// Handle form submission
+function submitBook(event) {
+  event.preventDefault();
+
+  // Fetch form inputs
   const bookTitle = document.getElementById("bookTitle").value;
+  const author = document.getElementById("author").value;
   const publicationYear = document.getElementById("publicationYear").value;
   const coverPath = document.getElementById("coverPath").value;
 
-  // Create a JSON object with book data
+  // Create book data object
   const bookData = {
     title: bookTitle,
-    publication_year: parseInt(publicationYear), // Ensure publication_year is an integer
+    author: author,
+    publication_year: parseInt(publicationYear),
     cover_path: coverPath,
   };
 
-  // Send the book data to the server via POST request
+  // Send the data to the server
   fetch("/api/add_book", {
     method: "POST",
     headers: {
@@ -84,81 +108,19 @@ function addBook() {
   })
     .then((response) => response.json())
     .then((data) => {
-      // Display a success message or handle errors if needed
-      console.log(data.message);
-
-      // Add the new book data to the books array
-      books.push(bookData);
-      console.log(books);
-
-      // Refresh the book list
-      displayBooks();
+      alert("Book added successfully!");
+      document.getElementById("addBookForm").reset();
+      document.getElementById("addBookModal").style.display = "none";
+      loadCategoryBooks();
     })
     .catch((error) => {
       console.error("Error adding book:", error);
     });
 }
 
-// Function to display books in the list
-function displayBooks(bookArray, sectionId) {
-  const section = document.getElementById(sectionId);
-  section.innerHTML = ""; // Clear existing book list
-
-  bookArray.forEach((book) => {
-    section.innerHTML += `
-            <div class="book">
-                <img src="${book.cover_path}" alt="${book.title}">
-                <h3>${book.title}</h3>
-                <p><strong>Author:</strong> ${book.author}</p>
-                <p><strong>Publication Year:</strong> ${book.publication_year}</p>
-            </div>
-        `;
-  });
-}
-
-// Function to fetch and display all books from the server
-function showAllBooks() {
-  fetch("/api/books")
-    .then((response) => response.json())
-    .then((data) => {
-      const bookList = document.getElementById("allbooks");
-      bookList.innerHTML = ""; // Clear existing book list
-      console.log(data);
-      data.books.forEach((book) => {
-        const bookElement = document.createElement("div");
-        bookElement.innerHTML = `
-                    <h2>${book.title}</h2>
-                    <p>Publication Year: ${book.publication_year}</p>
-                    <img src="${book.cover_path}" alt="Cover Image">
-                `;
-        bookList.appendChild(bookElement);
-      });
-    })
-    .catch((error) => {
-      console.error("Error fetching all books:", error);
-    });
-}
-
+// Search functionality for books
 document.getElementById("searchText").addEventListener("keyup", function () {
   searchBooks();
-});
-
-// Function to smoothly scroll back to the top
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-}
-
-// Show the scroll-to-top button when scrolled down
-window.addEventListener("scroll", function () {
-  const scrollToTopButton = document.getElementById("scrollToTopButton");
-  if (window.scrollY > 200) {
-    scrollToTopButton.classList.add("show");
-  } else {
-    scrollToTopButton.classList.remove("show");
-  }
 });
 
 function searchBooks() {
@@ -168,10 +130,10 @@ function searchBooks() {
     .toLowerCase();
   const searchResultsContainer = document.getElementById("searchResults");
 
-  searchResultsContainer.innerHTML = ""; // Clear previous results
+  searchResultsContainer.innerHTML = "";
 
   if (!searchText) {
-    searchResultsContainer.style.display = "none"; // Hide the dropdown if input is empty
+    searchResultsContainer.style.display = "none";
     return;
   }
 
@@ -191,18 +153,35 @@ function searchBooks() {
 
       filteredBooks.forEach((book) => {
         const listItem = document.createElement("li");
-        listItem.textContent = book.title; // Display only book title
+        listItem.textContent = book.title;
         searchResultsContainer.appendChild(listItem);
       });
 
-      searchResultsContainer.style.display = "block"; // Show the dropdown when results are available
+      searchResultsContainer.style.display = "block";
     })
     .catch((error) => {
       console.error("Error fetching books for search:", error);
     });
 }
 
-// Call loadCategoryBooks on page load
+// Scroll to top button
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+window.addEventListener("scroll", function () {
+  const scrollToTopButton = document.getElementById("scrollToTopButton");
+  if (window.scrollY > 200) {
+    scrollToTopButton.classList.add("show");
+  } else {
+    scrollToTopButton.classList.remove("show");
+  }
+});
+
+// Load books on page load
 window.onload = function () {
   loadCategoryBooks();
 };

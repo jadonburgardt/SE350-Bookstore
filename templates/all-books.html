@@ -82,7 +82,7 @@
           .then((response) => response.json())
           .then((data) => {
             const container = document.getElementById("allBooksContainer");
-            container.innerHTML = ""; // Clear any existing content
+            container.innerHTML = "";
 
             data.books.forEach((book) => {
               container.innerHTML += `
