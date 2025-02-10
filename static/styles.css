@@ -1,0 +1,14 @@
+/* Add styles for the button */
+#showBooksButton {
+    margin: 20px; /* Adjust the margin as needed */
+}
+
+p {
+text-align: center;
+font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-image: url("trees1.jpeg");
+    margin-right: 200px;
+}

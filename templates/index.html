@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Book Reviews</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+    <h1>Book Reviews</h1>
+
+    <!-- Add a div to input book data -->
+    <div id="addBook">
+        <h2>Add a Book</h2>
+        <input type="text" id="bookTitle" placeholder="Book Title">
+        <input type="text" id="publicationYear" placeholder="Publication Year">
+        <input type="text" id="coverPath" placeholder="Cover Path">
+        <button onclick="addBook()">Add</button>
+    </div>
+
+    <!-- Add a search box -->
+    <div id="searchBox">
+        <h2>Search</h2>
+        <input type="text" id="searchText" placeholder="Enter Book Title">
+        <button onclick="searchBooks()">Search</button>
+    </div>
+
+    <!-- Display books in this div -->
+    <div id="bookList">
+        <!-- Book data will be displayed here dynamically -->
+    </div>
+
+    <button id="showBooksButton" onclick="showAllBooks()">Show All Books</button>
+
+    <!-- Display books in this div -->
+    <div id="allbooks">
+        <!-- Book data will be displayed here dynamically -->
+    </div>
+
+    <img src="imgs\scsu_logo.jpg" alt="">
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
