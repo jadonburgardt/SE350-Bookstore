@@ -143,6 +143,24 @@ document.getElementById("searchText").addEventListener("keyup", function () {
   searchBooks();
 });
 
+// Function to smoothly scroll back to the top
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+// Show the scroll-to-top button when scrolled down
+window.addEventListener("scroll", function () {
+  const scrollToTopButton = document.getElementById("scrollToTopButton");
+  if (window.scrollY > 200) {
+    scrollToTopButton.classList.add("show");
+  } else {
+    scrollToTopButton.classList.remove("show");
+  }
+});
+
 function searchBooks() {
   const searchText = document
     .getElementById("searchText")

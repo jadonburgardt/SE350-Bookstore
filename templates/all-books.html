@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Books - Online Bookstore</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Header with Navbar -->
+    <header>
+      <div class="header-container">
+        <h1>Online Bookstore</h1>
+        <form class="search-bar" onsubmit="searchBooks(); return false;">
+          <input
+            type="text"
+            id="searchText"
+            placeholder="Search for books by Title..."
+          />
+          <div id="searchResults" class="search-results"></div>
+        </form>
+        <div class="cart-icon">
+          <ion-icon name="cart-outline"></ion-icon>
+        </div>
+      </div>
+    </header>
+
+    <nav>
+      <a href="index.html#bestsellersSection">Bestsellers</a>
+      <a href="index.html#fictionSection">Fiction</a>
+      <a href="index.html#nonfictionSection">Nonfiction</a>
+      <a href="index.html#addBookSection">Add Book</a>
+      <a href="all-books.html">All Books</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <!-- Hero Section for All Books -->
+    <div class="hero">
+      <h1>All Books</h1>
+    </div>
+
+    <!-- All Books Section -->
+    <div class="content">
+      <h2>Browse All Available Books</h2>
+      <div id="allBooksContainer" class="all-books-container"></div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+      <button onclick="goBack()">Back to Home</button>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Online Bookstore. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Fetch and display all books on page load
+      window.onload = function () {
+        fetchAllBooks();
+      };
+
+      function fetchAllBooks() {
+        fetch("/api/books")
+          .then((response) => response.json())
+          .then((data) => {
+            const container = document.getElementById("allBooksContainer");
+            container.innerHTML = ""; // Clear any existing content
+
+            data.books.forEach((book) => {
+              container.innerHTML += `
+                <div class="book">
+                  <img src="${book.cover_path}" alt="${book.title}" />
+                  <h3>${book.title}</h3>
+                  <p><strong>Author:</strong> ${book.author}</p>
+                  <p><strong>Publication Year:</strong> ${book.publication_year}</p>
+                </div>
+              `;
+            });
+          })
+          .catch((error) => {
+            console.error("Error fetching all books:", error);
+          });
+      }
+
+      // Function to go back to the previous page
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </body>
+</html>

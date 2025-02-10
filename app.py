@@ -3,6 +3,17 @@ import json
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/all-books')
+def all_books():
+    return render_template('all-books.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
 # Define the path to your JSON file
 JSON_FILE = 'data.json'
 

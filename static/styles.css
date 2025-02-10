@@ -52,6 +52,63 @@ Below this is styles from the old labs, above is given styles.
 }
 
 /**********^^ search bar ^^*********/
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: none; /* Initially hidden */
+  transition: opacity 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: #555;
+}
+
+.scroll-to-top.show {
+  display: block;
+}
+
+/**********^^ scroll top ^^*********/
+
+.back-button-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.back-button-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.back-button-container button:hover {
+  background-color: #555;
+  transition: 0.2s;
+}
+
+.all-books-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/**********^^ back button ^^*********/
 
 html {
   scroll-behavior: smooth;

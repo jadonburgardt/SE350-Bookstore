@@ -30,7 +30,7 @@
           <input
             type="text"
             id="searchText"
-            placeholder="Search for books by Title or Author..."
+            placeholder="Search for books by Title..."
             autocomplete="off"
           />
           <ul id="searchResults" class="search-results"></ul>
@@ -49,7 +49,7 @@
       <a href="#addBookSection">Add Book</a>
       <!-- <a href="#">eBooks</a>
       <a href="#">Audiobooks</a> -->
-      <a href="#">All Books</a>
+      <a href="./all-books">All Books</a>
       <a href="#">About Us</a>
       <a href="#">Contact</a>
     </nav>
@@ -130,7 +130,7 @@
 
     <!-- Add a new section for book management and database functionality -->
     <div class="content" id="addBookSection">
-      <h2>Add a Book & Manage Reviews</h2>
+      <h2>Add a Book to the Database</h2>
 
       <!-- Book input form -->
       <div id="addBook">
@@ -144,21 +144,6 @@
         <input type="text" id="coverPath" placeholder="Cover Path" />
         <button onclick="addBook()">Add Book</button>
       </div>
-
-      <!-- Display search results -->
-      <div id="bookList" class="book-list">
-        <h3>Search Results</h3>
-        <!-- Book data will be displayed here dynamically -->
-      </div>
-
-      <!-- Show all books -->
-      <button id="showBooksButton" onclick="showAllBooks()">
-        Show All Books
-      </button>
-
-      <div id="allbooks" class="book-list">
-        <!-- All books will be displayed here dynamically -->
-      </div>
     </div>
 
     <footer>
@@ -167,5 +152,13 @@
 
     <!-- JavaScript integration -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- Scroll-to-Top Button -->
+    <button
+      id="scrollToTopButton"
+      class="scroll-to-top"
+      onclick="scrollToTop()"
+    >
+      ↑
+    </button>
   </body>
 </html>
