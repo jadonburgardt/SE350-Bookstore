@@ -61,18 +61,24 @@ function loadCategoryBooks() {
 }
 
 // Open and close the modal functionality
+// Select the modal and close button
 const modal = document.getElementById("addBookModal");
-const openModalButton = document.getElementById("openModalButton");
 const closeModalButton = document.getElementById("closeModalButton");
 
-openModalButton.onclick = function () {
-  modal.style.display = "block";
-};
+// Open modal when clicking "Add Book" in the navbar
+document
+  .querySelector("nav a[href='#addBookSection']")
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent scrolling
+    modal.style.display = "block"; // Show the modal
+  });
 
+// Close the modal when clicking the close button
 closeModalButton.onclick = function () {
   modal.style.display = "none";
 };
 
+// Close the modal when clicking outside of it
 window.onclick = function (event) {
   if (event.target === modal) {
     modal.style.display = "none";
