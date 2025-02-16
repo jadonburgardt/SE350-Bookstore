@@ -86,13 +86,12 @@
 
             data.books.forEach((book) => {
               container.innerHTML += `
-                <div class="book">
-                  <img src="${book.cover_path}" alt="${book.title}" />
-                  <h3>${book.title}</h3>
-                  <p><strong>Author:</strong> ${book.author}</p>
-                  <p><strong>Publication Year:</strong> ${book.publication_year}</p>
-                </div>
-              `;
+          <div class="book">
+            <img src="${book.cover_path}" alt="${book.title}" />
+            <h3>${book.title}</h3>
+            <p class="book-author">${book.author}</p>
+          </div>
+        `;
             });
           })
           .catch((error) => {

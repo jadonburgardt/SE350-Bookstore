@@ -8,28 +8,40 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: white;
-  border: 1px solid #ccc;
+  background-color: #1e1e1e;
+  border: 1px solid #444;
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 100%;
-  max-height: 150px;
+  width: 50%;
+  max-height: 250px;
   overflow-y: auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
   z-index: 1000;
   font-size: 14px;
+  border-radius: 5px;
 }
 
 .search-results li {
+  display: flex;
+  align-items: center;
   padding: 8px;
   cursor: pointer;
-  border-bottom: 1px solid #e0e0e0;
-  color: black;
+  border-bottom: 1px solid #333;
+  color: #e0e0e0;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .search-results li:hover {
-  background-color: #f0f0f0;
+  background-color: #333;
+}
+
+.search-results img {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 4px;
 }
 
 .search-bar {
@@ -198,7 +210,7 @@ header h1 {
   font-weight: 700;
   font-size: 2rem;
   letter-spacing: 1px;
-  color: #333;
+  color: rgb(255, 255, 255);
 }
 
 nav a {
@@ -232,8 +244,9 @@ nav a:hover {
 
 /* Banners */
 .hero {
-  background: url("./imgs/books.jpg") no-repeat center center/cover;
-  height: 400px;
+  background: url("https://images.unsplash.com/photo-1517393435090-3ec2cce47400?q=80&w=2084&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    no-repeat center center/cover;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -310,16 +323,16 @@ footer {
 }
 
 .search-bar input:focus {
-  border-color: #7a572b;
+  border-color: #bc3030;
   outline: none;
-  box-shadow: 0 0 8px rgba(122, 87, 43, 0.5);
+  box-shadow: 0 0 8px rgba(212, 37, 37, 0.5);
 }
 
 .search-bar button {
   font-family: "Libre Baskerville", Georgia, serif;
   padding: 0.5rem 1rem;
   border: none;
-  background-color: #432f07;
+  background-color: #bc3a3a;
   color: white;
   cursor: pointer;
   border-radius: 25px;
@@ -328,7 +341,7 @@ footer {
 }
 
 .search-bar button:hover {
-  background-color: #7a572b;
+  background-color: #c23c3c;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
 }
@@ -358,7 +371,7 @@ footer {
 }
 
 .cart-icon ion-icon:hover {
-  color: #aaa;
+  color: #f93232;
 }
 
 /* Bestseller Container */
@@ -411,7 +424,7 @@ footer {
 /* See all */
 
 .see-all {
-  color: black;
+  color: rgb(242, 242, 242);
   font-size: small;
 }
 
@@ -466,4 +479,151 @@ it helps you ::-webkit-search-cancel-button .fiction-banner-alt {
   width: 100%;
   height: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Theme Styling */
+body {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+header {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+nav {
+  background-color: #232323;
+}
+
+nav a {
+  color: #e0e0e0;
+}
+
+nav a:hover {
+  background-color: #444;
+}
+
+.hero {
+  background: url("https://images.unsplash.com/photo-1517393435090-3ec2cce47400?q=80&w=2084&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    no-repeat center center/cover;
+  filter: brightness(70%);
+}
+
+.content {
+  background-color: #1e1e1e;
+  padding: 2rem;
+}
+
+.book {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.book:hover {
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+footer {
+  background-color: #232323;
+  color: #ffffff;
+}
+
+/* Buttons */
+button,
+.submit-btn,
+.open-modal-btn {
+  background-color: #333;
+  color: #ffffff;
+}
+
+button:hover,
+.submit-btn:hover,
+.open-modal-btn:hover {
+  background-color: #555;
+}
+
+.profile-icon img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-left: 0px;
+  cursor: pointer;
+}
+
+/* Search Bar */
+.search-bar input {
+  width: 650px; /* Increase width */
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 2px solid #444;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+}
+
+.search-bar input::placeholder {
+  color: #888;
+}
+
+.search-bar button {
+  background-color: #444;
+  color: white;
+}
+
+.search-bar button:hover {
+  background-color: #666;
+}
+
+/* Modal Styling */
+.modal-content {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  background-color: #444;
+  color: white;
+}
+
+.scroll-to-top:hover {
+  background-color: #666;
+}
+
+/* Cart Icon */
+.cart-icon ion-icon {
+  color: #e0e0e0;
+}
+
+.cart-icon ion-icon:hover {
+  color: #aaa;
+}
+
+.book {
+  width: 200px; /* Adjust size as needed */
+  height: 275px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2a2a; /* Background color */
+  color: #ffffff;
+  border-radius: 50%; /* Makes it circular */
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.book img {
+  width: 125px;
+  height: 150px;
+  border-radius: 10%; /* Makes the image circular */
+  object-fit: cover;
+}
+
+.book h3 {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
 }

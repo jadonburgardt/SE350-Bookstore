@@ -38,13 +38,12 @@ function loadCategoryBooks() {
       data.books.forEach((book) => {
         // Book template with title, author, and publication year
         const bookHTML = `
-              <div class="book">
-                  <img src="${book.cover_path}" alt="${book.title}" />
-                  <h3>${book.title}</h3>
-                  <p><strong>Author:</strong> ${book.author}</p>
-                  <p><strong>Publication Year:</strong> ${book.publication_year}</p>
-              </div>
-            `;
+        <div class="book circular-book">
+            <img src="${book.cover_path}" alt="${book.title}" />
+            <h3>${book.title}</h3>
+            <p class="book-author">${book.author}</p>
+        </div>
+      `;
 
         // Categorize and display books in the correct section
         if (bookCategories.bestsellers.includes(book.title)) {
@@ -140,7 +139,6 @@ function searchBooks() {
   fetch("/api/books")
     .then((response) => response.json())
     .then((data) => {
-      // Filter books by title only
       const filteredBooks = data.books.filter((book) =>
         book.title.toLowerCase().includes(searchText)
       );
@@ -153,7 +151,27 @@ function searchBooks() {
 
       filteredBooks.forEach((book) => {
         const listItem = document.createElement("li");
-        listItem.textContent = book.title;
+        listItem.style.display = "flex";
+        listItem.style.alignItems = "center";
+        listItem.style.padding = "8px";
+        listItem.style.cursor = "pointer";
+        listItem.style.borderBottom = "1px solid #333";
+        listItem.style.transition = "background-color 0.2s ease-in-out";
+
+        listItem.innerHTML = `
+          <img src="${book.cover_path}" alt="${book.title}" style="width: 40px; height: 60px; margin-right: 10px; border-radius: 4px;">
+          <div>
+            <strong>${book.title}</strong>
+            <br>
+            <small>${book.author}</small>
+          </div>
+        `;
+
+        listItem.onclick = () => {
+          document.getElementById("searchText").value = book.title;
+          searchResultsContainer.style.display = "none";
+        };
+
         searchResultsContainer.appendChild(listItem);
       });
 
