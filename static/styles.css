@@ -349,7 +349,7 @@ footer {
 /* Cart Icon */
 
 .cart-icon {
-  margin-left: 1rem;
+  margin-left: 0rem;
 }
 
 .cart-icon img {
@@ -715,5 +715,133 @@ form input::placeholder {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+/**************************/
+
+/* Responsive Styles */
+
+@media screen and (max-width: 768px) {
+  /* Adjust header */
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Adjust search bar width */
+  .search-bar input {
+    width: 100%;
+  }
+
+  /* Group Cart and Profile Icons */
+  .header-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between the icons */
+  }
+
+  /* Adjust Cart Icon */
+  .cart-icon {
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  /* Adjust Profile Icon */
+  .profile-icon img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  /* Navigation: Convert to a hamburger menu */
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #232323;
+    z-index: 1000;
+  }
+
+  nav a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: white;
+  }
+
+  /* Display nav when toggled */
+  .menu-open nav {
+    display: flex;
+  }
+
+  /* Book Containers: Stack vertically */
+  .bestseller-container,
+  .all-books-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  /* Adjust banners */
+  .fiction-banner img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Adjust hero section */
+  .hero {
+    height: 200px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  /* Footer adjustments */
+  footer {
+    text-align: center;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Further adjust hero section */
+  .hero {
+    height: 150px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Adjust book images */
+  .book img {
+    width: 100px;
+    height: 130px;
+  }
+
+  /* Adjust buttons */
+  .submit-btn,
+  .open-modal-btn {
+    font-size: 14px;
+    padding: 8px 12px;
   }
 }
